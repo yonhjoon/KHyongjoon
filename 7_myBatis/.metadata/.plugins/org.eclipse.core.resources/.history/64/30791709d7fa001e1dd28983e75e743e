@@ -1,0 +1,13 @@
+package com.kh.mybatis.board.model.vo;
+
+import java.sql.Date;
+
+public class Reply {
+	private int replyNo;
+	private String replyContent;
+	private int pefBoardNo;
+	private String replyWriter; //ID도 받아올수있으니 String로 만듬
+	private Date createDate;
+	private String status;
+	
+}

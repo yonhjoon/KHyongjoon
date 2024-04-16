@@ -1,0 +1,302 @@
+
+/* 2024년 3월 14일 파일 1교시부터시작 */
+/* 전체에 페딩과 마징 부여 하고 박스 사이즈는 보더 박스 */
+*{
+    padding: 0px; 
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* border 들어가는 css 만들기 */
+.bo{
+    border: 1px solid lightgray; 
+    margin-bottom: 10px;
+}
+
+li{
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+}
+
+/* 전체를감싸는 div에 대한 css */
+#wrapper{
+    width: 1000px;
+    /* 해당 넓이를 제거하고 미디어쿼리를 이용해서 제어하면 -> 반응형 (넓이를 고정시키는것) */
+    margin: 0 auto;
+    /* margin 은 위를 기준으로 시계방향인데 0 0 은 위 아래만 적용 0 0 0 0 은 다방면으로 주는것이고
+    위와 같이 위아래는 0 으로하고  좌우를auto로 한다면 좌우는 페이지 크기에따라 자동으로 반형된다!*/
+    padding: 10px 100px;
+    /* 페딩이있으니깐 위 px만큼은 확보하여 더이상 줄어들지않는다.
+        여유롭게 사이트를 만들때 컨텐츠들이 너무 붙지않게 사용한다. */
+}
+
+/* header에 대한 css */
+
+#header{
+    width: 100%;
+    display: flex;
+    /* 디스플레이(화면)를 중앙 정렬 */
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px;
+    /* 칸 전체에 로고및 다른것들이 너무 붙어있지않게 페딩줌 */
+}
+/* header라는 부모요소 */
+
+
+/* header에 있는 search CSS */
+.search{
+    width: 350px;
+    height: 30px;
+    display: flex;
+    /* 양옆으로 정렬할거기때문에 display: flex 줌 */
+
+}
+
+#header .search input{
+    /* 부모요소의 % 가 있어야 자식에게 %를 준다. */
+    width: 70%;
+    height: 100%;
+    border: none;
+    /* 검색바에만 있는 border를 없애는거 */
+    border-radius: 1px solid lightgray;
+}
+
+.search-img{
+    outline: none;
+    border: none;
+    width: 30%;
+    height: 100%;
+
+    background: url(../img/search.png) no-repeat center/contain;
+                                    /* no-repeat: 반복하지않겠다. 이미지가 작으면 
+                                    커질때 반복될수있으니 반복안할거다.
+                                    center: 중앙으로 오게해라 
+                                    contain : 내부 레이아웃이 페이지의 나머지 부분과 완전히 분리*/
+    /* 이런방식도 헌업에서 많이 사용한다 */
+}
+
+/* nav에 대한 CSS */
+
+#nav{
+    width: 100%;
+    padding: 20px 0px;
+}
+
+#nav>ul{
+    display: flex;
+    width: 100%;
+    /* justify-content: space-around;
+    align-items: center; 
+    이것만 줘도 된다. 밑 #nav li은 밑 text-aligb꺼다*/
+    text-align: center;
+}
+
+#nav > ul >li{
+    width: 20%;
+    /* 이 안에서 더이상 늘어날필요가없다면 위 #nav ul 안에
+     text-align: center;를 넣어 만들어준다 */
+
+     position: relative;
+}
+
+#nav>ul>li ul{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 5px 0px;
+    background: white;
+    /* left: calc(50% - 35px); */
+    display: none;
+}
+
+#nav li a{
+    color: gray;
+    font-weight: bold;
+}
+
+#nav > ul > li a:hover+ul{
+    display: block;
+}
+
+#nav > ul  ul:hover{
+    display: block;
+}
+
+/* section CSS */
+
+#section{
+    /* 섹션과 사이드 사이의 작은 공간이있으므로 전체 %에서 조금 공간은 남겨놔야된다 */
+    width: calc(70% - 10px);
+    /* 전체 70%중에서 10px뺸다 */
+    float: left;
+    /* 왼쪽에 정렬 */
+}
+
+#aside{
+    /* 나머지 30% */
+    width: 30%;
+    /* 오른쪽에있으니 오른쪽 정렬 */
+    float: right;
+}
+
+#section1, #aside{
+    height: 100px;
+}
+
+#section1 > img{
+    /* 반응형은 둘다 주면 안되는데 고정형이라 둘다줘도 깨지지않는다면 괜찮다 */
+    height: 100%;
+    width: 100%;
+}
+
+#section2{
+    display: flex;
+    /* 가로 정렬 */
+    height: 50px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#section2 ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    /* gap :사이의 공간을 px만큼 띄어줘ㄴ */
+}
+
+#section2 p{
+    font-size: 14px;
+}
+
+#section3{
+    height: 250px;
+    background: url(../img/car.PNG)  no-repeat center/contain;
+}
+
+
+/* 아이디 비밀번호 로그인 && 회원 비번 회원가입 */
+/* aside (위에도있음) */
+
+#aside1 .login{
+    display: flex;
+    /* 가로정렬 */
+    height: 75%;
+    width: 100%;
+}
+
+#aside1 .login .input{
+    height: 100%;
+    width: 70%;
+    /* 로그인 자리 만들어야되니 70% */
+    /* 크기안에 있기떄문에 %로 줘도된다. */
+}
+
+#aside1 .login .input > input{
+    height: 50%;
+    width: 100%;
+}
+
+#aside1 .login .btn{
+    width: 30%;
+    height: 100%;
+}
+
+#aside1 .login .btn > button{
+    width: 100%;
+    height: 100%;
+}
+
+#aside1 .aside1-menu{
+    width: 100%;
+    height: 25%;
+}
+
+#aside1 .aside1-menu ul{
+    display: flex;
+    justify-content: center;
+    /* 
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center; */
+
+    /* 
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 4px; */
+}
+
+#aside1 .aside1-menu ul li{
+    font-size: 12px;
+    font-weight: 900;
+}
+
+#aside1 .aside1-menu ul li span::after{
+    content: "|";
+    color: black;
+    margin: 0px 5px;
+}
+
+#aside2{
+    height: 310px;
+    background: url(../img/shopping.PNG) no-repeat center/contain;
+}
+
+#footer{
+    width: 100%;
+
+    clear: both;
+    /* 이거 넣으니깐 바로정렬됨 */
+    padding: 15px;
+}
+
+#footer a{
+    font-weight: bold;
+}
+
+#footer ul{
+    display: flex;
+}
+
+#footer li span::after{
+    content: "|";
+    color: black;
+    margin: 0px 20px;
+}
+
+.md-20{
+    margin-bottom: 20px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+/* 내가 한거 */
+/* 공통요소들 적는곳
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+div{
+    box-sizing: border-box;
+} */

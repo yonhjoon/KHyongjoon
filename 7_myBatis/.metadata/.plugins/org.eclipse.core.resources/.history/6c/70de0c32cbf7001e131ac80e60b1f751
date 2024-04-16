@@ -1,0 +1,21 @@
+package com.kh.mybatis.board.model.vo;
+
+import java.sql.Date;
+
+public class board {
+	private int boardNo;
+	private String boardTitle;
+	private String boardContent;
+	private String boardWriter;
+	private int count;
+	private Date createDate;
+	private String status;
+	
+	BOARD_NO
+	BOARD_TITLE
+	BOARD_CONTENT
+	BOARD_WRITER
+	COUNT
+	CREATE_DATE
+	STATUS
+}

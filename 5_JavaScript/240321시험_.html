@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id1 {
+            width: 300px;
+            margin: 0px 0px 0px 16px;
+        }
+
+        #id2 {
+            width: 300px;
+            height: 120px;
+            margin: -18px 0px -16px 16px;
+        }
+
+        .table-bordered {
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .heda{
+            height: 100%;
+        }
+
+        .tHead {
+            background: #ffa07a;
+            color: white;
+            border: 1px solid black;
+        }
+
+        .ter {
+            width: 100px;
+            background: rgb(250, 239, 202);
+        }
+
+        .tpood {
+            background: #ffa07a;
+            color: white;
+        }
+
+        .tth {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>포트폴리오 문제</h1>
+    <p>설명: '*'이 붙은 문구 및 현재 작성된 이 문구는 화면구현시 구현을 안해도됩니다. 설명을 위해 작성한 구문입니다.</p>
+
+    <hr>
+    <br>
+
+    <p>* 하단의 화면처럼 공지사항 작성하기 폼을 작성하시오. (form의 action속성값은 "insert.no"부여, method속성값은 "post"부여)</p>
+
+    <hr>
+
+
+    <fieldset>
+        <legend>공지사항 작성하기</legend>
+        <div>&nbsp;&nbsp; <strong>제목</strong> <input type="text" id="id1" name="title" placeholder="제목을 입력하시오."> </div>
+        <br>
+        <div>&nbsp;&nbsp; <strong>내용</strong> <input type="text" id="id2" name="content" placeholder="내용을 입력하시오."></div>
+        <br>
+        <div><strong>첨부파일</strong> <input type="file" name="" id=""> </div> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button>작성하기</button>
+    </fieldset>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="head">
+        <table class="table-bordered">
+            <thead>
+                <tr class="tHead">
+                    <th class="tth">번호</th>
+                    <th class="tth">제목</th>
+                    <th class="tth">작성자</th>
+                    <th class="tth">작성일</th>
+                    <th class="tth">조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="ter">
+                    <td class="tth  ter1">9</td>
+                    <td class="tth">
+                        <div class="tth">
+                            <div class="tth1">공지사항 제목 9</div>
+                            <div class="tth2"><button>바로가기</button></div>
+                    </td>
+                    <td class="tth">user01</td>
+                    <td class="tth">2021-03-29</td>
+                    <td class="tth">34</td>
+                </tr>
+                <tr class="ter">
+                    <td class="tth  ter2">6</td>
+                    <td class="tth">
+                        <div class="tth">
+                            <div class="tth1">공지사항 제목 6</div>
+                            <div class="tth2"><button>바로가기</button></div>
+                    </td>
+                    <td class="tth">absw445</td>
+                    <td class="tth">2021-03-12</td>
+                    <td class="tth">67</td>
+                </tr>
+                <tr class="ter">
+                    <td class="tth  ter3">3</td>
+                    <td class="tth">
+                        <div class="tth">
+                            <div class="tth1">공지사항 제목 3</div>
+                            <div class="tth2"><button>바로가기</button></div>
+                    </td>
+                    <td class="tth">testg12</td>
+                    <td class="tth">2021-03-01</td>
+                    <td class="tth">98</td>
+                </tr>
+                <tr class="ter">
+                    <td class="tth  ter4">2</td>
+                    <td class="tth">
+                        <div class="tth">
+                            <div class="tth1">공지사항 제목 2</div>
+                            <div class="tth2"><button>바로가기</button></div>
+                    </td>
+    </div>
+    <td class="tth">palwe3</td>
+    <td class="tth">2021-01-02</td>
+    <td class="tth">85</td>
+    </tr>
+    <tr class="ter">
+        <td class="tth  ter5">1</td>
+        <td class="tth">
+            <div class="tth">
+                <div class="tth1">공지사항 제목 1</div>
+                <div class="tth2"><button>바로가기</button></div>
+        </td>
+        <td class="tth">xml23</td>
+        <td class="tth">2020-12-24</td>
+        <td class="tth">124</td>
+    </tr>
+    <tr class="tpood ter6">
+        <td class="tth">전체공지사항 갯수</td>
+        <td class="tth">5개</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+
+
+
+
+</body>
+
+</html>

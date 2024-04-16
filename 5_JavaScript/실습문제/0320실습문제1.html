@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head {
+            box-sizing: border-box;
+        }
+
+        #area {
+            box-sizing: border-box;
+            border: 1px solid black;
+            width: 500px;
+            height: 200px;
+        }
+
+        div {
+            box-sizing: border-box;
+            margin: 15px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Practice4</h1>
+    <div>
+        <fieldset id="head">
+            <legend>구매정보</legend>
+            <ul class="textInput">
+                <li>구매자 : <input type="text" id="id1" placeholder="구매자의 이름을 입력하세요"></li>
+                <li>상품명 : <input type="text" id="id2" placeholder="구매 상품명을 입력하세요."></li>
+                <li>가격 : <input type="number" id="id3" placeholder="구매 가격을 입력하세요."></li>
+                <li>구매수량 : <input type="number" id="id4" placeholder="최소 10." min="10" max="100"></li>
+                <li>납품 등급 <input type="range" id="id5" min="0" max="10" value="1"></li>
+                <li><label for="comment">기타사항 : <textarea class="form-control" rows="5" id="id6" name="text"></textarea></label></li>
+            </ul>
+        </fieldset>
+    </div>
+
+
+    <button onclick="textInput()">입력 값 출력</button>
+    <div>
+        <div id="area"></div>
+    </div>
+    <script>
+        function textInput() {
+            let input1 = document.getElementById("id1");
+            let input2 = document.getElementById("id2");
+            let input3 = document.getElementById("id3");
+            let input4 = document.getElementById("id4");
+            let input5 = document.getElementById("id5");
+            let input6 = document.getElementById("id6");
+
+            console.log(input1.value); // 1
+            console.log(input2.value);
+            console.log(input3.value);
+            console.log(input4.value);
+            console.log(input5.value);
+            console.log(input6.value);
+
+
+            document.getElementById("area").innerHTML = "구매자 명 : " + input1.value + "<br>" +
+                                                        "상품명 : " + input2.value + "<br>" +
+                                                        "가격 : " + input3.value + "<br>" +
+                                                        "구매수량 : " + input4.value + "<br>" +
+                                                        "납품등급 : " + input5.value + "<br>" +
+                                                        "기타사항 : " + input6.value;
+
+
+
+            // input1.value = "";
+            // input2.value = "";
+            // input3.value = "";
+            // input4.value = "";
+            // input5.value = "";
+            // input6.value = "";
+
+
+        }
+    </script>
+</body>
+
+</html>

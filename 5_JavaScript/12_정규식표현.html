@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            border:  1px solid black;
+            background:  lightblue;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>정규식 표현</h1>
+    <p>
+        정규 표현식 (REGEX / REGEXP : Regular Expression)이란, <br>
+        특정 패턴을 가신 문자열을 찾거나 또는 찾아서 변경할 때 사용하는 형식 <br>
+        정규표현식을 이용하면 문자열에 대한 특정 패턴 고전을 검사할 때 복잡하지 않게 할 수 있다. <br>
+    </p>
+
+    <h3>* 정규표현식 객체 생성 및 정규표현식과 관련된 메소드</h3>
+
+    <button onclick="test1()">실행</button>
+    <div class="area" id="area1"></div>
+
+    <script>
+        function test1(){
+            const area = document.getElementById('area1');
+
+            const str1 = "javascript jquery ajax";
+            const str2 = "java oracle html css";
+
+            // 정규표현식 객체 생성
+            //  => 검색 조건으로 삼고자하는 문자열 또는 특정패턴을 만들어서 객체생성을 해야한다
+
+            const regExp1 = new RegExp("script"); //객체 생성 방법 1
+            const regExp2 = /script/;   // 객체 생성 방법 2
+            // 둘중 아무거나 써도 상관없다 비등비등하게 쓰인다
+
+            /**
+             * RegExp 객체에서 제공하는 메소드
+             * 1) 정규식.test(문자열) : 문자열에서 정규식값과 일치하는 값이 있으면 true 없으면 false
+             * 2) 정규식.exec(문자열) : 문자열에서 정규식값과 일치하는 값이 있으면 해당 값중 가장 처음에 찾은 값을 반환한다.
+             */
+            
+            //  정규식.test(문자열)을 제일 많이 쓴다
+
+            area.innerHTML += "regExp2.test(str1) : " + regExp2.test(str1) + "<br>";
+            area.innerHTML += "regExp2.test(str2) : " + regExp2.test(str2) + "<br>";
+            area.innerHTML += "regExp2.exec(str1) : " + regExp2.exec(str1) + "<br>";
+            area.innerHTML += "regExp2.exec(str2) : " + regExp2.exec(str2) + "<br>";
+            area.innerHTML += "str2.replace(regExp2, 스크립트) : " + str1.replace(regExp2, "") + "<br>";
+            // replace : regExp2 조건에 나오는 걸 오른쪽 스크립트 로 대체한다
+        }
+    </script>
+
+    <h3>* 메타문자</h3>
+    <p>
+        메타문자를 이용해서 정규식으로 검색조건으로 삼을 '특정패턴'을 제시 할 수 있다. <br>
+        문자열이 해당 정규식으로 제시한 특정 패턴에 만족하는지 test()를 통해 검사할 수 있다. <br>
+        문자열의 replace함수와 함께 사용해서 치환할 수 있다.
+    </p>
+
+    <button onclick="test2()">실행</button>
+    <div class="area" id="area2" style="height: 500px;"></div>
+
+    <script>
+        function test2(){
+            const are2 = document.getElementById('area2');
+
+            const str = "javascript jquery ajax";
+
+            let regExp = /a/ //메타문자가 없는 일단 a문자를 넣은거다.
+            area2.innerHTML += '/a/ : ' + regExp.test(str) + "<br>"
+
+            regExp = /^j/ // ^ : 시작을 의미한다. 즉 j로 시작하는 단어가 있나 검사하는것 
+            area2.innerHTML += '/^j/ : ' + regExp.test(str) + "<br>"
+            area2.innerHTML += '/^j/ : ' + str.replace(regExp, "*") + "<br>"
+            // /^j/ : *avascript jquery ajax
+
+            // [] : []내에 있는 여러문자들을 목록처럼 나열이 가능하다.
+            regExp = /[abc]/ // a 또는 b 또는 c 가 포함되어있는지 검사하는거다
+            area2.innerHTML += '/[abc]/ : ' + regExp.test(str) + "<br>"
+            area2.innerHTML += '/[abc]/ : ' + str.replace(regExp, "*") + "<br>"
+
+            regExp = /x$/ // x 로 끝나는것
+            area2.innerHTML += '/x$/ : ' + regExp.test(str) + "<br>"
+            area2.innerHTML += '/x$/ : ' + str.replace(regExp, "*") + "<br>"
+
+            const regRxp = /^[a-zA-Z0-9]{5,12}$/;
+        }
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습2</title>
+    <link rel="stylesheet" href="./style/index.css">
+
+</head>
+<body>
+    <!-- 2024년 3월 14일 파일 1교시부터시작 -->
+    <!--  헤더(검색창) 네비(메뉴바) 섹션(가운데 사진 및 정보) 사이드(로그인창 밑에 사진) 풋(맨아래) -->
+    <div id="wrapper"> <!-- 전체를 감싸는 div -->
+        <div id="header" class="bo"> <!--KH 로고 및 검색창-->
+            <img src="./img/logo.PNG" alt="KM로고">
+
+            <div class="search bo"> <!-- 검색바 -->
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button class="search-img"></button>
+            </div>
+
+            <!-- 안보이는 div를 한개만들어서 css에서flex를 줌  -->
+            <div style="width: 95px;"></div>
+        </div>
+
+        <!-- 네비(메뉴바) -->
+        <div id="nav" class="bo">
+            <ul>
+                <!-- #쓰면 그냥 내 페이지로 돌아옴 -->
+                <li><a href="#">교육과정</a></li>
+                <li>
+                    <a href="#">교육원소개</a>
+                    <ul>
+                        <li><a href="">자바</a></li>
+                        <li><a href="">네트워크</a></li>
+                        <li><a href=""></a>보안</li>
+                        <li><a href=""></a>데브옵스</li>
+                    </ul>
+                </li>
+                <li><a href="#">취업지원센터</a></li>
+                <li><a href="#">산학연계</a></li>
+                <li><a href="#">상담센터</a></li>
+            </ul>
+        </div>
+        <!-- 광고 배너 -->
+        <div id="section">
+            <div id="section1" class="bo">
+                <img src="./img/banner.PNG" alt="광고배너">
+            </div>
+            <!--  -->
+            <div id="section2" class="bo">
+                <p>안녕하세요 여기는 공지사항 제목이 들어오는 자리입니다.</p>
+                <ul>
+                    <li><a href="">경제</a></li>
+                    <li><a href="">연애</a></li>
+                    <li><a href="">사회</a></li>
+                </ul>
+            </div>
+            <div id="section3" class="bo"></div>
+        </div>
+
+        <!-- 아이디창 및 아이디 바로 밑 -->
+        <div id="aside">
+            <!-- 아이디 비번 입력-->
+            <div id="aside1" class="bo">
+                <div class="login">
+                    <div class="input">
+                        <input type="text" placeholder="아이디를 입력하세요">
+                        <input type="password" placeholder="비밀번호를 입력하세요">
+                    </div>
+                    <div class="btn">
+                        <button>로그인</button>
+                    </div>
+                </div>
+                <!-- 아디 비번 회원가입 -->
+                <div class="aside1-menu">
+                    <ul>
+                        <li><a href=""><span>아이디</span></a></li>
+                        <!-- 선택자로 찍고싶어서 span을 넣음 아이디 비번찾기를 찍을려고 -->
+                        <li><a href=""><span>비밀번호찾기</span></a></li>
+                        <li><a href="">회원가입</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="aside2" class="bo">
+
+            </div>
+        </div>
+
+        <div id="footer" class="bo">
+            <ul>
+                <li><a href=""><span>이용약관</span></a></li>
+                <li><a href=""><span>개인정보취급방침</span></a></li>
+                <li><a href=""><span>인재채용</span></a></li>
+                <li><a href="">고객센터</a></li>
+            </ul>
+
+            <div>
+                <p>강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F 
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F
+                    강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F
+                    종로지원 : 서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F, 3F
+                    당산지원 : 서울특별시 영등포구 선유동2로 57 이레빌딩(구관) 19F, 20F
+                </p>
+            </div>
+            <div class="text-center">
+                Copyright © 1998-2024 KH Information Educational Institute All Right Reserved
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- 내가 한거 header.css /index.css / navigator.css -->
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습2</title>
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/navigator.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left-section">
+            <img src="./실습문제2 이미지/logo.PNG" alt="KH">
+        </div>
+        <div class="middle-section" >
+            <input class="search-bar" type="text" placeholder="검색어를 입력하세요">
+            <button class="search-button">
+                <img class="search-button-size" src="./실습문제2 이미지/search.png" alt="검색버튼">
+            </button>
+        </div>
+        <div class="right-sections">
+            <p></p>
+        </div>
+    </header>
+
+    <navigator class="navigators">
+        <div>
+            <ul class="navi">
+                <li><a href="#">교육과정</a></li>
+                <li><a href="#">교육원소개</a></li>
+                <li><a href="#">취업지원센터</a></li>
+                <li><a href="#">산학연계</a></li>
+                <li><a href="#">상담센터</a></li>
+            </ul>
+        </div>
+    </navigator>
+
+</body>
+</html> -->

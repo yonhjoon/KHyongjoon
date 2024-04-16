@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.omg.CORBA_2_3.portable.InputStream"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.member.model.vo.Member"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.common.template.Template"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.common.template.Pagination"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+</qualifiedTypeNameHistroy>

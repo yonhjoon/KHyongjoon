@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제3</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+
+    
+    <form action="">
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <b>ID <input type="text" name="userid" placeholder="아이디 10글자이내." maxlength="10" required></b><input type="button" value="중복확인"> <br>
+            <b>비밀번호<input type="password" name="userPwd" placeholder="영문,숫자,문자,특수문자포함." required></b> <br>
+            <strong>비밀번호 확인 <input type="password" required></strong><br>
+            <b>Eamil <input type="text"> <select name="national" id="">
+                <option value="" selected>직접입력</option>
+                <option value="">@naver.com</option>
+                <option value="">@nate.com</option>
+                <option value="">@gamil.com</option>
+                <!-- selected 태그는 제일 처음 보이게 하는태그 굳이 첫번쨰에 안쓰더라도 4번째줄에있는곳에다 적어도 1번째로 보인다-->
+            </select></b>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>추가 정보</legend>
+            <p><b>프로필사진 : 파일선택 : </b><input type="file"></p> <br><br>
+
+            <b>성별</b> : 
+            <input type="radio" name="gender" id="mam">
+            <label for="mam">남자</label>
+            <input type="radio" name="gender" id="woman">
+            <label for="woman">여자</label> <br>
+
+        <br>
+
+            <b>생년월일</b> : <input type="date" name="date">
+
+            <br><br><br>
+
+            <b>취미(중복가능)</b> <br>
+
+            <input type="checkbox" name="hobby">  
+            <label for="hobby">야구</label>
+            <input type="checkbox" name="hobby">
+             <label for="hobby">농구</label>
+            <input type="checkbox" name="hobby">  
+            <label for="hobby">축구</label>
+            <br>
+            <input type="checkbox" name="hobby"> 
+            <label for="hobby">공부</label>
+            <input type="checkbox" id="music" name="hobby" value="music">  
+            <label for="music">음악감상</label>
+            <br>
+            <input type="checkbox" name="hobby"> 
+            <label for="">기타 :</label> : <input type="text"> <br> 
+            <!-- 같은 카테고리는 이름으로 묶어주는게 좋다-->
+            
+            자기소개 : <textarea name="" id="" cols="30" rows="5" style="resize: none;"></textarea>
+            </fieldset>
+            <br>
+            <input type="button" value="회원가입"> 
+            <input type="button" value="다시입력"> 
+            <input type="button" value="이전으로">
+        </fieldset>
+    </form>
+
+</body>
+</html>

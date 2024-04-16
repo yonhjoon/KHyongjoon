@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 문서 구조</title>
+    <style>
+        body{
+            /* 자동으로 부여된 margin, padding 없애기 (화면에 꽉꽉 채우고싶으면) */
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            box-sizing: border-box;
+            border: 1px solid blue;
+        }
+
+        /* 전체를 감싸는 div */
+        .wrap{
+            width: 100%;
+            min-height: 500px;
+            height: 800px; /*안에 content가 없어서 임의로 800px줌*/
+            /* height: max-content; */
+            /*  min-height 최소 이정도이고  height: max-content 모든 컨텐츠에 최대치로 결정*/
+        }
+
+        /* #header #content #footer */
+        .wrap > div{
+            width: 100%;
+        }
+
+        #header, #footer{height: 150px;}
+        #content{
+            min-height: 200px;
+            height: calc(100% - 300px);
+        }
+        #content > div{
+            height: 100%;
+            float: left;
+        }
+        #content1{width: 150px;}
+        #content2{width: calc(100% - 150px);}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">0</div>
+        <div id="content">
+            <div id="content1">1</div>
+            <div id="content2">2</div>
+        </div>
+        <div id="footer">3</div>
+    </div>
+</body>
+</html>

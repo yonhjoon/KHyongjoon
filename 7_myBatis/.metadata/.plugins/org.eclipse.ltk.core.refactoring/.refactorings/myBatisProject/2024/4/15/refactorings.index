@@ -1,0 +1,16 @@
+1712634583915	Move 'web.xml' to 'webapp'
+1712634593189	Move 'web.xml' to 'lib'
+1712634738617	Move 'index.jsp' to 'webapp'
+1712641622014	Rename resource 'Member-mapper.xml'
+1712794718622	Rename package 'mapper'
+1712795368969	Delete element
+1712796227867	Delete element
+1712800160978	Rename type 'MemberServiceImpl'
+1712804646026	Move folder
+1712804689341	Move 'member' to 'java'
+1712804697405	Move 'member' to 'mybatis'
+1712804806050	Rename resource 'myBatis-config.xml'
+1712816837104	Copy compilation unit
+1712816914252	Rename type 'Pagenation'
+1712817033383	Rename compilation unit 'Pagenation.java'
+1712819747670	Rename type 'board'

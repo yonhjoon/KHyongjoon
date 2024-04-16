@@ -1,0 +1,13 @@
+INDEX VERSION 1.134
+C:\workspace\7_myBatis\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3153657800.index
+\myBatisProject\src\main\java
+C:\workspace\7_myBatis\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3171648617.index
+\myBatisProject\src\main\java
+C:\workspace\7_myBatis\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\635443191.index
+\myBatisProject\src\main\java
+C:\workspace\7_myBatis\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1067817199.index
+\myBatisProject\src\main\java
+C:\workspace\7_myBatis\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\787510753.index
+\myBatisProject\src\main\java
+C:\workspace\7_myBatis\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3428751665.index
+\myBatisProject\src\main\java

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            width: 500px;
+            height: 100px;
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+<body>
+    <h1>함수(function)</h1>
+
+    <h3 onclick="text1();">*선언적 함수</h3>
+    <pre>
+        function 함수명([매게변수, 매게변수,...]){
+            해당함수 호출시 실행할 코드;
+
+            [return 결과값;]
+            <!-- 자료형을 반환할필요가없다 -->
+        }
+    </pre>
+
+
+    <button id="text1" onclick="text1()">실행확인</button>
+    <div id="area1" class="area"></div>
+    <script>
+        function text1(){
+            document.querySelector("#area1").innerHTML += "text1() 함수 실행됨<br>";
+        }
+    </script>
+    <!-- 이 안에서는 function 으로 인해 이름을 불러와야 하므로 이름이 있어야한다. -->
+    <!-- // 한가지의 기능을 계속 사용할때 쓰는 기본적 함수방식 -->
+
+    <br><br>
+
+    <h3>*익명함수(이름이 없는함수)</h3> 
+    <pre>
+        변수 | 속성 = function([매게변수, 매게변수,...]){
+            해당함수 호출시 실행할 코드;
+
+            [return 결과값;]
+        }
+
+        특정 변수나 속성에 대입되는 함수 재시시 주로 사용됨
+        (주로 이벤트 핸들러(이벤트 발생시 실행할 함수) 작성시 사용됨)
+    </pre>
+    <button id="btn">실행확인</button>
+    <div id="area2" class="area"></div>
+    <script>
+        const btn = document.getElementById("btn"); // button요소 객체
+        btn.onclick = function(){ //익명함수 => 이름이 없어서 직접 호출 불가
+            // 이벤트 속성에 대입되는 function == 이벤트 헨들러 가 된다.
+
+            document.getElementById("area2").innerHTML += "이벤트 헨들러를 통해 실행됨 <br>"
+        }
+    </script>
+        <!-- 함수를 만드는 방식 (2가지를 배웠다) -->
+
+    <br><br>
+
+    <h2>함수의 매게변수</h2>
+
+    <button onclick="test2('안녕하세요')">실행확인</button>
+    <button onclick="test2(10)">실행확인</button>
+    <button onclick="test2([1,2,3])">실행확인</button>
+    <button onclick="test2(true)">실행확인</button>
+
+    <br>
+    
+    <button onclick="test2(prompt('이름을 입력해주세요'))">실행확인</button>
+    <button onclick="test2('안녕하세요', '반갑습니다.')">실행확인</button>
+    <button onclick="test2(10, true, '안녕')">실행확인</button>
+
+    <div id="area3" class="area"></div>
+    <script>
+        function test2(value){
+            console.log(arguments); // 함수호출시 전달되는 값은 내부적으로 arguments 배열에 담김
+            document.getElementById("area3").innerHTML = value;
+        }
+    </script>
+
+    <!-- this : 현재 요소 객체 -->
+    <button onclick="test3(this);">버튼1</button>
+    <button onclick="test3(this.innerHTML);">버튼2</button>
+    <input type="button" value="3" onclick="test3(this.value);">
+    <button id="btn4" onclick="test3(this);">4</button>
+    <script>
+        function test3(a){
+            console.log(a.innerHTML);
+        }
+    </script>
+
+    <button onclick="test4(this)">클릭</button>
+
+    <script>
+        function test4(el){
+            if(el.style.background !== "red"){
+                el.style.background = "red";
+                el.innerHTML = "클릭됨";
+            }else {
+                el.style.background = "white";
+                el.innerHTML = "클릭";
+            }
+            
+        }
+        
+    </script>
+
+    <hr>
+    <br>
+
+    <h2>함수의 리턴</h2>
+    <h3>*일반적인 값 리턴</h3>
+
+    <button onclick="test5()">실행</button>
+    <div id="area5" class="area"></div>
+
+    <script>
+        function ran(){
+            const random = parseInt(Math.random() * 100 + 1); // 1부터 시작해서 100
+            return random;
+        }   
+
+        function test5(){
+            document.querySelector("#area5").innerHTML += ("랜덤값 : " + ran() + "<br>");
+        }
+
+    </script>
+
+    <br>
+
+    <!-- 이러한 방식이 왜 되는지 알아야한다 -->
+    <h3>*함수를 리턴</h3>
+    이름 : <input type="text" id="userName">
+    <button onclick="test6()()">실행</button>
+
+    <script>
+        function test6(){
+            const inputEl = document.getElementById("userName");
+            let alFunk = function(){
+                alert(inputEl.value);
+            }
+
+            return alFunk;
+            // 리턴할 함수 alFunk를 반환했으므로 test6()에 ()을 더 추가한다.
+            // 왜냐하면 test6() 은 alFunk 이 되므로 또 반환을 해야하므로 alFunk() 이되야한다
+            // 고로 test6()()이 되야한다
+            // 자바스크립트는 함수가 변수에 들어갈수있다! *젤중요*
+            // 클릭이라는 이벤트 발생시 변수를 출력한다 *중요*
+        }
+
+
+    </script>
+
+
+
+
+</body>
+</html>

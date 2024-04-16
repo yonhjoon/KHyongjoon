@@ -1,0 +1,24 @@
+/* 공통요소들 적는곳 */
+
+body{
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: black;
+    font-family: "Noto Sans KR", sans-serif;
+    padding-top: 60px;
+    padding-left: 72px;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+p{
+    margin: 0px;
+}
+
+main{
+    padding: 10.5px 20px 0px;
+    
+}
