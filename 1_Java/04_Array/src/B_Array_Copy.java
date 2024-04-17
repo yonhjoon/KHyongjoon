@@ -103,18 +103,18 @@ public class B_Array_Copy {
 		
 		
 		
-		//3. Arrays클래스에서 제공하는 copyOf()메소드이용
-		int[] origin = {1,2,3,4,5};
-		
-		// 복사본 배열 = Arrays.copyOf(원본배열명, 복사할길이);
-		int[] copy = Arrays.copyOf(origin, 5);
-		
-		origin[1] = 44;
-		
-		for(int i=0; i < copy.length; i++) {
-			System.out.print(copy[i] + " ");
-		}
-		// 1 2 3 4 5 
+//		//3. Arrays클래스에서 제공하는 copyOf()메소드이용
+//		int[] origin = {1,2,3,4,5};
+//		
+//		// 복사본 배열 = Arrays.copyOf(원본배열명, 복사할길이);
+//		int[] copy = Arrays.copyOf(origin, 5);
+//		
+//		origin[1] = 44;
+//		
+//		for(int i=0; i < copy.length; i++) {
+//			System.out.print(copy[i] + " ");
+//		}
+//		// 1 2 3 4 5 
 		
 		/*
 		 * Arrays.copyOf 메소드

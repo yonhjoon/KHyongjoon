@@ -157,6 +157,11 @@ public class MemberController {
 		session.removeAttribute("loginUser");
 		
 		return "redirect:/";
+		//리다이렉트(Redirect)는 사용자가 처음 요청한 URL이 아닌, 다른 URL로 보내는 것을 뜻해요. 
+		// =>예를 들어, 웹사이트 A의 주소로 접속한 사용자를 웹사이트 B로 이동시키는 것이죠
+		// 스프링의 방식차이여서 그냥 받아오냐 redirect로 받느냐의 차이이므로 미리 스프링설정으로 servlet-context.xml 안에 경로 설정을 했으므로 "main"만 적어도
+		// 자동으로 WEB-INF/views/main.jsp 로 간다
+		//현재 적용 방식은 초기url로 돌아가는것이므로 메인페이지로 가는것이다 다른곳으로 이동하고싶으면 / 뒤에 url주소를 넣으면된다
 	}
 	
 	// 회원가입

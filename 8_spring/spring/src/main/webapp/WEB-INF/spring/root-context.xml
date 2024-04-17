@@ -10,16 +10,8 @@
 		DB연결 설정, 트렌젝션처리, 내외부 모듈연동 등등
 	 -->
 	 
-	 <!-- 커넥션풀을 쓸수있는 클래스등록 -->
-	 <bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource" destroy-method="close">
-	 	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-	 	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-	 	<property name="username" value="spring"/>
-	 	<property name="password" value="spring"/>
-	 </bean>
-	 
 	 <!-- 
-	 	* oracle 세팅*
+	 	* 원래하던 oracle 세팅*
 	 	
 	 	BasicDataSource dataSource = new BasicDataSource();
 	 	dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
@@ -29,27 +21,40 @@
 	 	...
 	 	와 같다
 	  -->
-	  
-	  <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
-	 	<property name="configLocation" value="classpath:mybatis-config.xml"/>
-	 	<property name="dataSource" ref="dataSource"/>
-	  </bean>
+	  	 
+	 <!-- 커넥션풀을 쓸수있는 클래스등록 --> <!-- 스프링 oracle 설정 -->
+	 <bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource" destroy-method="close">
+	 	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	 	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+	 	<property name="username" value="spring"/>
+	 	<property name="password" value="spring"/>
+	 </bean>
 	  
 	  <!-- 
-	  	* myBatis 세팅*
+	  	* 원래하던 myBatis 세팅*
 	  	
 	  	SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 	  	sqlSessionFactory.setConfigLocation("classpath:mybatis-config.xml");
 	  	sqlSessionFactory.setConfigLocation(dataSource);
 	   -->
+	   	 
+	   	 <!-- 스프링 MyBatis 설정  -->
+	  <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+	 	<property name="configLocation" value="classpath:mybatis-config.xml"/>
+	 	<property name="dataSource" ref="dataSource"/>
+	  </bean>
 	   
+	   
+	   <!--  원래하던 SqlSessionTemplate 세팅
+	 	SqlSessionTemplate sqlSession = new SqlSessionTemplate(sqlSessionFactory);
+	  -->
+	  
+	  <!-- 스프링 SqlSessionTemplate세팅 
+	  		SqlSessionTemplate : Mybatis쿼리문을 수행해주는 역할을 합니다.
+	  	 -->
 	   <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
 	   		<constructor-arg ref="sqlSessionFactory"/>
 	   </bean>
-	 
-	 <!-- 
-	 	SqlSessionTemplate sqlSession = new SqlSessionTemplate(sqlSessionFactory);
-	  -->
 	 
 	 
 </beans>
