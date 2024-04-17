@@ -22,5 +22,23 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.kh.spring" />
+	
+	<!-- 
+		옛날 2~3버젼 이전일떄는 어떻게 했을까? (지금은 5버젼?6버젼?)
+	
+		*사용자가 어떤 url로 요청시 해당문서가 읽혀진다고 생각하면됩니다.
+		
+		hendlerMapping 통해서 url로 요청시 어떤 Controller를 구동시킬건지 찾아내야합니다. => 요청값에 적합한 controller 실행
+		
+		1. 요청될때마다 실행될 Controller클래스들을 bean으로 등록해야한다.
+		<beans:bean class="com.kh.spring.member.controller.MemberController" id="loginController" />
+		
+		2. 어떤 url로 요청시 어떤Controller를 구동시킬 것인지 맵핑(이런걸 handlerMapping이라 한다)을 시켜줘야한다.
+		<beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+			<beans:property name="mapping">
+				<beans:prop key="login.me">loginController</beans:prop>
+			</beans:property>
+		</beans:bean>
+	 -->
 
 </beans:beans>
