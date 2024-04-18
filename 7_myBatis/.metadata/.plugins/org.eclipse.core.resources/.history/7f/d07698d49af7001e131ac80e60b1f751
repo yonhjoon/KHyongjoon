@@ -1,8 +1,0 @@
-package com.kh.mybatis.common.template;
-
-public class Template {
-	//마이바티스
-	public static SqlSeession getSqlSession() {
-		
-	}
-}

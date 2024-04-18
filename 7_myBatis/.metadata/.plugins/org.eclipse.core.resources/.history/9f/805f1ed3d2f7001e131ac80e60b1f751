@@ -1,7 +1,0 @@
-package com.kh.mybatis.board.service;
-
-public interface BoardService {
-	//게시판리스트 조회를 위한거다
-	public int selectListCount();
-	public int selectList();
-}
