@@ -1,13 +1,10 @@
-package com.kh.spring.member.model.vo;
-
-import java.sql.Date;
+package com.kh.spring.board.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
 
 /*
  * Lombok
@@ -25,16 +22,14 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Member {
-	private String userId;
-	private String userPwd;
-	private String userName;
-	private String email;
-	private String gender;
-	private String age;
-	private String phone;
-	private String address;
-	private Date enrollDate;
-	private Date modifyDate;
+public class Board {
+	private int boardNo ;
+	private String boardTitle;
+	private String boardWriter;
+	private String boardContent;
+	private String originName;
+	private String changeName;
+	private int count;
+	private String createDate;
 	private String status;
 }
