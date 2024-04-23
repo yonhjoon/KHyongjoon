@@ -1,6 +1,8 @@
 package com.kh.spring.board.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 import com.kh.spring.board.model.vo.Board;
@@ -58,5 +61,37 @@ public class BoardController {
 		ArrayList<Reply> list = boardService.selectReply(bno);
 		
 		return new Gson().toJson(list);
+	}
+	
+	//게시글 등록
+	@RequestMapping("enrollForm.bo")
+	public String enrollForm() {
+		return "board/boardEnrollForm";
+	}
+	
+	//파일불러오는거
+	@RequestMapping("insert.bo")
+	public String insertBoard(Board b, MultipartFile upfile){
+		System.out.println(b);
+		System.out.println(upfile);
+		
+		//전달된 파일이 있을경우  => 파일이름 변경 => 서버에 저장 => 원본명, 서버업로드된 경로를 b객체에 담기
+		if(!upfile.getOriginalFilename().equals("")) {
+			String changeName = saveFile(upfile);
+			
+		} 
+		
+		return "main";
+	}
+	
+	//실제 넘어온 파일의 이름을 변경해서 서버에 저장하는 메소드
+	//우리가 할때는 템플릿 안에다 만들어야된다 컨트롤러에는 안된다 우리보기 편하라고 만든것
+	public String saveFile(MultipartFile upfile) {
+		String originName = upfile.getOriginalFilename();
+		//년월일시분초
+		String currentTime = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+	
+		// 5자리 랜덤값
+		// 확장자
 	}
 }

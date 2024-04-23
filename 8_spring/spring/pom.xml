@@ -198,6 +198,7 @@
 		    <version>5.5.2</version>
 		</dependency>
 				
+		<!-- 직접만들어서 쓸때는 빈에 등록을 안해도된다 -->
 		<!-- gson -->
 		<dependency>
 		    <groupId>com.google.code.gson</groupId>
@@ -210,6 +211,24 @@
 		    <groupId>com.googlecode.json-simple</groupId>
 		    <artifactId>json-simple</artifactId>
 		    <version>1.1.1</version>
+		</dependency>
+		
+		<!-- 만들어진걸 쓸때는 빈에 등록해야된다 -->
+		
+		<!-- 파일업로드를 위한 라이브러리 -->
+		<!-- commons-fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.3.3</version>
+		</dependency>
+		
+		<!-- 파일을 전송받을떄 연결할수있는 통로 -->
+		<!-- commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.6</version>
 		</dependency>
 		
 		
