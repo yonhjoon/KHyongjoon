@@ -22,9 +22,12 @@ public interface BoardService {
 	//댓글목록 조회
 	ArrayList<Reply> selectReply(int bno);
 	
-	//게시글  추가(insert)
+	//게시글 추가(insert)
 	int insertBoard(Board b);
 	
 	//게시글 수정
 	int updateBoard(Board b);
+	
+	//댓글추가
+	int insertReply(Reply r);
 }
