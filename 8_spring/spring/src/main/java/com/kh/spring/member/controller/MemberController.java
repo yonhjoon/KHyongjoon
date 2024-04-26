@@ -1,5 +1,7 @@
 package com.kh.spring.member.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,7 +126,7 @@ public class MemberController {
 	//2. 스프링에서 제공하는 ModelAndView객체사용
 	
 	@RequestMapping("login.me")
-	public ModelAndView loginMember(Member m, ModelAndView mv, HttpSession session) {	
+	public ModelAndView loginMember(Member m, ModelAndView mv,String saveId , HttpSession session,HttpServletResponse response) {	
 		//암호화 전
 //		Member loginUser = memberService.loginMember(m);
 //		
@@ -158,18 +160,23 @@ public class MemberController {
 		//두 구문이 일치하면 true를 반환 일치하지않으면 false 반환
 		
 		bcryptPasswordEncoder.matches(m.getUserPwd(), loginUser.getUserPwd());
-		
+		//실패했을때도 아이디저장하고싶으면 여기 밖에다 하면된다
 		if (loginUser == null) { // 아이디가 없는 경우
 			mv.addObject("errorMsg", "일치하는 아이디를 찾을 수 없습니다.");
-			
 			mv.setViewName("common/errorPage");
 			
 			//비밀번호가 다른경우
 		} else if (!bcryptPasswordEncoder.matches(m.getUserPwd(), loginUser.getUserPwd())){ 
 			mv.addObject("errorMsg", "비밀번호가 일치하지 않습니다.");
-			
 			mv.setViewName("common/errorPage");
 		} else { // 성공
+			Cookie ck = new Cookie("saveId", loginUser.getUserId());
+			if(saveId == null) { //체크박스에 체크를 하지않았다면
+				ck.setMaxAge(0); //0초로 만들어서 없애버린다
+			}
+			response.addCookie(ck);
+			
+			
 			session.setAttribute("loginUser", loginUser);
 			mv.setViewName("redirect:/");
 		}
