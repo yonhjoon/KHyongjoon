@@ -13,7 +13,8 @@ import React, { useState } from 'react'
     state : 컴포넌트의 상태값을 말한다.
     useState : 컴포넌트의 상태를 생성하고 관리할 수 있게 해주는 react hook이다.
 
-    컴포넌트는 state값이 변경되면 이를 확인하고 요소를 리랜더링 해준다.
+    컴포넌트는 부모의값이 변경되거나 state값이 변경되면 
+    이를 확인하고 요소를 리랜더링 해준다.
 */
 
 
@@ -25,8 +26,9 @@ const UseStateTest = () => {
 
     const onClick1 = () => {
         //num++;
-        setNum(num + 1);
-        console.log("onClick1 : " + num);
+        setNum(num + 1); // 0 => 1 이 되야하는데
+        console.log("onClick1 : " + num); // 0찍힘 왜?
+        //리랜더링을 하는거라 기본값인 0이 찍히는거다
     }
 
 
