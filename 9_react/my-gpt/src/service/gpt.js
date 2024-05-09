@@ -64,7 +64,7 @@ export const CallGpt = async ({prompt}) => {
                 "content" : prompt
               }
             ],
-            "temperature": 0.7,
+            "temperature": 1,
             "max_tokens": 1002,
             "top_p": 1,
             "frequency_penalty": 0,
@@ -75,5 +75,6 @@ export const CallGpt = async ({prompt}) => {
     const responseDate = await response.json();
 
     const message = responseDate.choices[0].message.content;
-    console.log(message)
+    //console.log(message)
+    return message;
 }
