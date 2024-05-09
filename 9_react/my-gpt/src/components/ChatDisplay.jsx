@@ -24,22 +24,25 @@ const ChatDisplay = ({chatDataList, isLoading}) => {
                         </Card>
                     </Space>
                     {/* 응답메세지 */}
-                    <Space>
-                        <Card
-                            style={{
-                                width:300,
+                    <RqeusetArea>
+                        <Space>
+                            <Card
+                                style={{
+                                    width:500,
+                                    margin: "20px"
 
-                            }}
-                            bodyStyle={{
-                                padding: "12px"
-                            }}>
-                            {chat.message}
-                        </Card>
-                        <Avatar 
-                            size={40} 
-                            src={"https://www.irobotnews.com/news/photo/201803/13262_31414_3740.png"}
-                        />
-                    </Space>
+                                }}
+                                bodyStyle={{
+                                    padding: "12px"
+                                }}>
+                                {chat.message}
+                            </Card>
+                            <Avatar 
+                                size={40} 
+                                src={"https://www.irobotnews.com/news/photo/201803/13262_31414_3740.png"}
+                            />
+                        </Space>
+                    </RqeusetArea>
                 </div>
             ))
         }
