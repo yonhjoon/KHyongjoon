@@ -21,6 +21,6 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.kh.openData" />
+	<context:component-scan base-package="com.kh.opendata" />
 
 </beans:beans>
