@@ -1,9 +1,11 @@
 package com.kh.spring.aspect;
 
-import java.lang.reflect.Method;
 import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -31,7 +33,11 @@ public class LoggingAOP {
 	 * 
 	 * @After: 대상 메서드 실행 후에 Advice(추가기능)이 실행된다.
 	 * 
-	 * @AfterRetuning : 대상 메서드가 정상적으로 반환된 후에 Advice가 실행됩니다.
+	 * @AfterReturning : 대상 메서드가 정상적으로 반환된 후에 Advice가 실행됩니다.
+	 * 
+	 * @AfterThrowing : 대상 메서드가 예외를 던진 후에 Advice가 실행된다.
+	 * 
+	 * @Around : 대상메서드를 감싸서 메서드 호출 전후에 Advice를 실행할 수 있다.
 	 */
 	
 	/*
@@ -42,11 +48,9 @@ public class LoggingAOP {
 	 */
 	
 	// @Pointcut - 내가 기능을 사용할 지점을 정의
-	// com.kh.spring패키지 하위 패키지중 controll내에있는 모든 클래스의 모든메서드
+	// 'com.kh.spring패키지 하위 패키지'중 'controll'내에있는 '모든 클래스'의 '모든메서드'
 	@Pointcut("execution(* com.kh.spring..controller.*.*(..))")
-	private void cut() {
-		
-	}
+	private void cut() {}
 	
 	// cut메서드가 실행되는 지점 이전에 before()메서드를 실행
 	// JoinPoint는 프로그램의 실행중 특점 지점을 나타내며,
@@ -66,6 +70,32 @@ public class LoggingAOP {
 		log.info("Method Name      : " + method);
 		log.info("Parameter      : " + Arrays.toString(args));
 		
+	}
+	
+	@AfterReturning(value = "cut()", returning = "obj")
+	public void afterReturn(JoinPoint joinPoint, Object obj) {
+		log.info("========================END=======================");
+		log.info("Object      : " + obj);
+	}
+	
+	//api시간측정
+	@Around("cut()")
+	public Object displayLogInfo(ProceedingJoinPoint pJoinPoint) throws Throwable {
+		long start = System.currentTimeMillis(); //현재시간을 초로바꿔서 start에 넣는다
+		//시작시간
+		Object result = pJoinPoint.proceed(); // 원래 해야되는 기능을 실행해준다.
+		//시간 찍어주고 원래하던 행위 다시 해 라는 뜻이다
+		
+		long end = System.currentTimeMillis();
+		//끝나는 시간
+		
+		long pTime = end - start;
+		
+		log.info("--------------------------------------------------");
+		log.info("Information        : " +   pJoinPoint.getSignature());
+		log.info("Information        : " + pTime + "ms");
+	
+		return result;
 	}
 
 }

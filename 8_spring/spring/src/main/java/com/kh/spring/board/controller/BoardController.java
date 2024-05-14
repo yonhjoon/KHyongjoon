@@ -39,7 +39,7 @@ public class BoardController {
 	public String selectList(@RequestParam(value="cpage", defaultValue="1") int currentPage, Model model) {
 		int boardCount = boardService.selectListCount();
 		//logger.info("list.bo실행");
-		log.info("list.bo실행");
+		//log.info("list.bo실행");
 		
 		PageInfo pi = Pagination.getPageInfo(boardCount, currentPage, 10, 5);
 		ArrayList<Board> list = boardService.selectList(pi);
@@ -189,7 +189,6 @@ public class BoardController {
 	@RequestMapping("rinsert.bo")
 	public String ajaxInsertReply(Reply r) {
 		//성공했을 때는 success, 실패했을 때 fail
-		
 		return boardService.insertReply(r) > 0 ? "success" : "fail";
 	}
 	
