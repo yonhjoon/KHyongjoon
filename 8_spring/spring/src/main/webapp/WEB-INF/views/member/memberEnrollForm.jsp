@@ -111,8 +111,6 @@
                                 document.querySelector("#enrollForm button[type='submit']").disabled = true;
                                 //checkResult 안보이는 상태
                                 document.getElementById("checkResult").style.display = "none";
-
-
                             }
                         }
 
