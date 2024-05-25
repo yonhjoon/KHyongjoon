@@ -1,0 +1,115 @@
+img {
+    width: 248px;
+    height: 75px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+#find-div {
+    max-width: 800px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#findId-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 500px;
+}
+
+table {
+    max-width: 500px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+label {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #dd0d64;
+    margin-bottom: 0;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid #999;
+    appearance: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+input[type="checkbox"]:checked {
+    background: #000000;
+    border: 0.8px solid black;
+    transform: scale(1.0);
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    background-color: transparent;
+}
+
+input[type="number"] {
+    border: 1px solid black;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    background-color: transparent;
+}
+
+
+
+#findId-label {
+    max-width: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+table tr {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+#findId-div th {
+    padding: 10px;
+    text-align: left;
+    min-width: 100px;
+}
+
+.check_button {
+    border: 2px solid black;
+    height: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
