@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/user/insertForm.css">
+    <link rel="stylesheet" href="../css/insertForm.css">
     <!-- 주소 카카오 api -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>회원가입</title>
@@ -17,13 +17,13 @@
 <body onload="init()">
     <header>
         <!-- js -->
-        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-        <script src="${contextPath}/resources/js/api/userapi.js"></script>
-        <script src="${contextPath}/resources/js/user/insertForm.js"></script>
+        <script src="../common/header.jsp"></script>
+        <script src="../js.ajax/userapi.js"></script>
+        <script src="../js/insertForm.js"></script>
     </header>
     <main>
         <div class="image-container">
-            <img src="${contextPath}/resources/img/user/dlatl.png" alt="광고배너">
+            <img src="../img/dlatl.png" alt="">
         </div>
         <h1 class="signin-h1">정보입력</h1>
         <hr>
@@ -178,7 +178,7 @@
         </form>
     </main>
     <footer>
-        <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+        <link rel="stylesheet" href="../common/footer.jsp">
     </footer>   
 </body>
 </html>
