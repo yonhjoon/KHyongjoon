@@ -296,3 +296,4 @@ public class MemberController {
 			return "redirect:/myPage.me";
 		}
 	}
+}
