@@ -124,7 +124,7 @@ public class MemberController {
 //	}
 	
 	//2. 스프링에서 제공하는 ModelAndView객체사용
-	
+//	로그인
 	@RequestMapping("login.me")
 	public ModelAndView loginMember(Member m, ModelAndView mv,String saveId , HttpSession session,HttpServletResponse response) {	
 		//암호화 전
@@ -184,6 +184,7 @@ public class MemberController {
 		return mv;
 	}
 	
+//	로그아웃
 	@RequestMapping("logout.me")
 	public String logoutMember(HttpSession session){
 		//로그아웃 -> session에서 loginUser 삭제, 만료
@@ -193,6 +194,7 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+//	회원가입 페이지
 	@RequestMapping("enrollForm.me")
 	public String enrollForm() {
 		return "member/memberEnrollForm";
@@ -219,6 +221,7 @@ public class MemberController {
 		//return memberService.idCheck(checkId) > 0 ? "NNNNN" : "NNNNY";
 	}
 	
+//	회원가입
 	@RequestMapping("insert.me")
 	public String insertMember(Member m, HttpSession session, Model model) {
 		/*
@@ -293,63 +296,3 @@ public class MemberController {
 			return "redirect:/myPage.me";
 		}
 	}
-	
-	// 24 05 07 요규사항 확인 시험
-//	@Controller
-//
-//	@RequestMapping(value="/user")
-//
-//	public class UserController {
-//
-//	@GetMapping(value="/login")
-//
-//	public String login() {
-//
-//	//로그인
-//
-//	}
-//
-//	@GetMapping(value="/allUser")
-//
-//	public String allUser() {
-//
-//	//전체회원조회
-//
-//	}
-//
-//	@PostMapping(value="/regist")
-//
-//	public String regist() {
-//
-//	//회원가입
-//
-//	}
-//
-//	@GetMapping(value="/mypage")
-//
-//	public String mypage() {
-//
-//	//마이페이지
-//
-//	}
-//
-//	@PostMapping(value="/modify")
-//
-//	public String modify() {
-//
-//	//정보수정
-//
-//	}
-//
-//	@GetMapping(value="/remove")
-//
-//	public String remove() {
-//
-//	//회원탈퇴
-//
-//	}
-//
-//	}	
-	
-	
-}
