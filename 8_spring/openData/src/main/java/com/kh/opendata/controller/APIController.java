@@ -34,8 +34,15 @@ public class APIController {
 		url += "&returnType=json";
 		url += "&sidoName=" + URLEncoder.encode(location, "UTF-8"); //요청시 전달값에 한글이 있으면 인코딩 작업을 해줘야한다.
 		
+		//url에 parameter 정보들을 추가하시오
+//		- serviceKey : 공공데이터포털에서 훈련생 개인이 승인받은 OpenAPI 인증키
+
+//		- returnType (json으로 출력결과 받음)
+		
+//		- sidoName : 서울, 부산, 대전
+		
 		// 1. 요청하고자하는 url을 전달하면서 java.net.URL 객체 생성
-				URL reqeustURL = new URL(url);
+		URL reqeustURL = new URL(url);
 				
 		// 2. 만들어진 URL객체를 가지고 HttpURLConnection객체 생성
 		HttpURLConnection urlConnection = (HttpURLConnection)reqeustURL.openConnection();
@@ -45,7 +52,6 @@ public class APIController {
 				
 		// 4. 해당 api서버로 요청 보낸후 입력데이터 읽어오기
 		BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-	
 		String responseText = "";
 		String line;
 		while((line = br.readLine()) != null ) { //읽을게 더 이상없을때는 null반환
